@@ -1,6 +1,6 @@
 # Real-Time Chat with SignalR (pausado)
 
-Este es un proyecto personal desarrollado para explorar y probar la tecnología SignalR con .NET y Angular. Implementa un chat en tiempo real siguiendo principios de Clean Architecture.
+Este es un proyecto personal desarrollado para explorar y probar la tecnología SignalR con .NET. Implementa un chat en tiempo real siguiendo principios de Clean Architecture.
 ### 📜 Características
 
 - Chat en tiempo real con SignalR.
