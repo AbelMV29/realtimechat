@@ -1,0 +1,29 @@
+<div *ngIf="chatOpen == null || chatOpen == undefined" class="flex flex-row justify-center items-center h-full">
+    <p class="font-bold text-text-primary text-center">No seleccionaste ningún chat</p>
+</div>
+<div *ngIf="chatOpen != null" class="flex flex-col justify-between h-full">
+    <div class="flex flex-row gap-3 h-[80px] items-center bg-bg-tertiary px-6">
+        <img src="{{chatOpen.user.photoUrl}}" class="rounded-full w-[50px] h-[50px]">
+        <p class="text-text-primary">{{chatOpen.user.fullName}}</p>
+        <p class="text-text-secondary">{{chatOpen.user.userName}}</p>
+    </div>
+    <div class="flex-grow p-[10px] flex flex-col gap-[10px] w-full justify-start overflow-y-auto pb-[250px] h-screen">
+        <ng-container *ngFor="let item of chatOpen.messages">
+            <div *ngIf="isMine(item.senderId)" class="place-self-end bg-bg-message flex flex-col gap-[10px] p-[10px] rounded-md">
+                <p class="text-text-primary">{{item.body}}</p>
+                <img src="{{item.mediaUrl}}" *ngIf="item.mediaUrl" width="50px" height="50px" alt="Imagen del mensaje">
+                <p class="text-text-secondary">{{item.date}}</p>
+            </div>
+            <div *ngIf="!isMine(item.senderId)" class="place-self-start bg-bg-received flex flex-col gap-[10px] p-[10px] rounded-md">
+                <p class="text-text-primary">{{item.body}}</p>
+                <img src="{{item.mediaUrl}}" *ngIf="item.mediaUrl" width="50px" height="50px" alt="Imagen del mensaje">
+                <p class="text-text-secondary">{{item.date}}</p>
+            </div>
+        </ng-container>
+        
+    </div>
+    <div class="sticky bottom-0 bg-white">
+        <app-message-form  [receiverId]="chatOpen.user.id" (messageEvent)="addMessage($event)"></app-message-form>
+
+    </div>
+</div>

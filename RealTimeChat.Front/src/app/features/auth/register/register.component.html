@@ -1,0 +1,19 @@
+<div class="w-full flex flex-row justify-center h-full items-center ">
+    <form class="justify-center items-center  border-bg-tertiary border-[1px] flex flex-col gap-5 bg-bg-secondary py-[30px] px-6 rounded-md"[formGroup]="registerForm" (ngSubmit)="signUp()" >
+        <h2 class="text-2xl text-text-primary font-bold">Únete a ChatSignalR</h2>
+        <div class="flex flex-row flex-wrap gap-5 ">
+            <input type="text" formControlName="name" placeholder="Nombre"/>
+            <input type="text" formControlName="lastName" placeholder="Apellidos"/>
+        </div>
+        <div class="flex flex-row flex-wrap gap-5">
+            <input type="email" formControlName="email" placeholder="example@mail.com"/>
+            <input type="text" formControlName="userName" placeholder="nombreUsuario"/>
+        </div>
+        <div class="flex flex-row flex-wrap gap-5">
+            <input type="password" formControlName="password" placeholder="********"/>
+            <input type="password" formControlName="confirmPassword" placeholder="********"/>
+        </div>
+        <button type="submit" class="bg-bg-message transition-[.5s] hover:bg-bg-tertiary text-text-primary font-bold py-2 px-4 rounded-md">Registrarme</button>
+    </form>
+</div>
+

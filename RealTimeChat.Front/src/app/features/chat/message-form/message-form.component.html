@@ -1,0 +1,15 @@
+<form (ngSubmit)="sendMessage()"[formGroup]="messageForm" class="h-[80px] w-full bg-bg-tertiary flex flex-row p-[10px] py-3 gap-6">
+    <input class="px-[10px] py-2 bg-bg-secondary flex-grow rounded-md focus:outline-none
+     text-text-primary placeholder:text-text-secondary font-bold text-[16px]" 
+     type="text" placeholder="Escribe un mensaje..." formControlName="body">
+    
+    <label for="fileInput" class="cursor-pointer">
+        <fa-icon [icon]="faImage" class="file-icon text-text-secondary"></fa-icon>
+    </label>
+    
+    <input id="fileInput" type="file" class="file-input" formControlName="mediaUrl">
+    
+    <button type="submit" class="bg-bg-message transition-colors hover:bg-bg-secondary p-3 px-4 text-text-primary font-bold rounded-full">
+        <fa-icon class="text-xl" [icon]="faShare"></fa-icon>
+    </button>
+</form>

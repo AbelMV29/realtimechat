@@ -1,0 +1,12 @@
+<div class="flex flex-col w-full text-text-primary">
+    <div class="flex flex-row items-center text-xl pl-6 font-bold py-[10px] border-b-[1px] border-bg-tertiary h-[80px]">Chats</div>
+    <ng-container *ngIf="chats !=null && chats.length > 0">
+        <app-chat-especific (chatEvent)="onChildSelectChat($event)" *ngFor="let chat of chats" [chat]="chat"></app-chat-especific>
+    </ng-container>
+    <div *ngIf="chats == null || chats.length == 0" 
+    class="flex flex-col items-center px-6 font-medium 
+    py-[10px] h-[70px]">
+        <p class="text-red-500">No tienes chats</p>
+        <p class="text-text-primary">Descubre a gente mediante el buscador e inicia un chat</p>
+    </div>
+</div>

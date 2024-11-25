@@ -1,0 +1,10 @@
+<div class="font-bold flex flex-row gap-5 items-center">
+    <ng-container *ngIf="user != null">
+        <h5 class="text-text-primary">{{user.fullName}}</h5>
+        <img class="bg-white rounded-full" src="{{user.photoUrl}}" width="30px" height="30px">
+        <a class="text-red-500 cursor-pointer hover:text-red-700 active:text-red-900 transition-colors" (click)="exit()">Salir</a>
+    </ng-container>
+    <ng-container *ngIf="user == null">
+        <a class="text-bg-message hover:text-bg-received active:text-bg-message transition-colors" routerLink="/login">Ingresar</a>
+    </ng-container>
+</div>

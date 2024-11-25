@@ -1,0 +1,13 @@
+<div class="rounded-md bg-bg-secondary focus-within:border-bg-tertiary border-[1px]
+    pl-[10px] py-2 pr-5 flex flex-row gap-[10px] border-bg-secondary relative">
+    <fa-icon [icon]="faSearch" class="text-text-secondary"></fa-icon>
+    <input (focus)="focus()" (blur)="blur()" (ngModelChange)="searchUsers()" [(ngModel)]="userName" class="bg-inherit focus:outline-none text-text-primary placeholder:text-text-secondary font-bold text-[16px]" type="text" placeholder="Buscar personas...">
+    <div class="absolute bg-bg-secondary right-0 self-center w-full top-10" *ngIf="onFocus && users != null && users.length > 0">
+        <div *ngFor="let item of users" class="flex flex-row justify-between flex-wrap text-text-primary p-2 hover:bg-bg-tertiary border-b-[1px] border-bg-tertiary">
+            <img src="{{item.photoUrl}}" class="rounded-full" width="30px" height="30px">
+            <p>{{item.fullName}}</p>
+            <p>{{item.userName}}</p>
+        </div>
+    </div>
+</div>
+       

@@ -1,0 +1,9 @@
+:host
+{
+    flex-grow: 1;
+}
+
+input
+{
+    @apply transition-colors border-[1px] border-bg-tertiary focus-within:outline-none focus:border-text-secondary bg-bg-tertiary rounded-md p-2  text-text-primary font-bold;
+}

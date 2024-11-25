@@ -1,0 +1,10 @@
+
+.file-icon {
+    font-size: 1.5rem;
+    color: #6B7280;
+
+
+    .file-input:valid + label .file-icon {
+        color: #10B981; 
+    }
+}

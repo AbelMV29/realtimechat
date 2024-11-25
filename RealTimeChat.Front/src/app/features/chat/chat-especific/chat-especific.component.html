@@ -1,0 +1,11 @@
+
+<div (click)="selectChat(chat.user.id)" *ngIf="chat != null" class="hover:bg-bg-secondary cursor-pointer flex flex-row w-full gap-4 h-[70px] px-6 py-[10px] border-b-[1px] border-bg-tertiary">
+    <img src="{{chat.user.photoUrl}}" class="rounded-full" width="50px" height="50px">
+    <div class="flex flex-col justify-between w-full">
+        <h5 class="font-bold text-lg text-text-primary">{{chat.user.fullName}}</h5>
+        <div class="flex flex-row w-full justify-between text-text-secondary font-normal">
+            <p>{{chat.lastMessage.body.slice(0, 30)}}...</p>
+            <p>{{chat.lastMessage.date}}</p>
+        </div>
+    </div>
+</div>

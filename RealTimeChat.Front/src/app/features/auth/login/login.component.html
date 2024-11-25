@@ -1,0 +1,9 @@
+<div class="w-full flex flex-row justify-center h-full items-center ">
+    <form class="justify-center items-center  border-bg-tertiary border-[1px] flex flex-col gap-5 bg-bg-secondary py-[30px] px-6 rounded-md"[formGroup]="loginForm" (ngSubmit)="login()" >
+        <h2 class="text-2xl text-text-primary font-bold">Ingresar</h2>
+            <input type="email" formControlName="email" placeholder="example@mail.com"/>
+            <input type="password" formControlName="password" placeholder="********"/>
+        <button type="submit" class="bg-bg-message transition-[.5s] hover:bg-bg-tertiary text-text-primary font-bold py-2 px-4 rounded-md">Ingresar</button>
+    </form>
+</div>
+
